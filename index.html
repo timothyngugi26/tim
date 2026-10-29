@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timothy Mwangi Theo - Software Engineer</title>
+    <title>Timothy Ngugi - Software Engineer & AI Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -28,7 +28,13 @@
         }
 
         body {
-            background: linear-gradient(135deg, var(--primary-purple), var(--dark-purple));
+            background: #0a0612;
+            background-image:
+                radial-gradient(ellipse at 10% 0%, rgba(138, 43, 226, 0.35) 0%, transparent 55%),
+                radial-gradient(ellipse at 90% 15%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 100%, rgba(106, 13, 173, 0.4) 0%, transparent 60%),
+                linear-gradient(160deg, #0a0612 0%, #14081f 45%, #0a0612 100%);
+            background-attachment: fixed;
             color: var(--light);
             line-height: 1.6;
             overflow-x: hidden;
@@ -42,8 +48,8 @@
 
         /* Header */
         header {
-            background-color: rgba(30, 41, 59, 0.8);
-            backdrop-filter: blur(10px);
+            background-color: rgba(10, 6, 18, 0.85);
+            backdrop-filter: blur(12px);
             position: fixed;
             width: 100%;
             top: 0;
@@ -113,7 +119,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" opacity="0.1"><polygon fill="%23ffd700" points="0,1000 1000,0 1000,1000"/></svg>');
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" opacity="0.08"><polygon fill="%23ffd700" points="0,1000 1000,0 1000,1000"/></svg>');
             background-size: cover;
             z-index: -1;
         }
@@ -122,7 +128,7 @@
             font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 1.5rem;
-            background: linear-gradient(90deg, var(--gold), var(--jungle-green));
+            background: linear-gradient(90deg, var(--gold), var(--light-purple), var(--jungle-green));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -151,12 +157,12 @@
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.15);
         }
 
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
         }
 
         /* Section Styles */
@@ -192,11 +198,34 @@
             align-items: center;
         }
 
-        .profile-img {
+        /* Golden icon placeholder for profile */
+        .profile-icon-wrap {
             width: 100%;
+            aspect-ratio: 1 / 1;
+            background: linear-gradient(135deg, rgba(255,215,0,0.12), rgba(138,43,226,0.2), rgba(41,171,135,0.12));
             border-radius: 1rem;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
             border: 3px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-icon-wrap::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(255,215,0,0.15), transparent 60%);
+        }
+
+        .profile-icon-wrap i {
+            font-size: 7rem;
+            background: linear-gradient(135deg, var(--gold), var(--jungle-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 4px 12px rgba(255,215,0,0.3));
         }
 
         .about-text h3 {
@@ -219,12 +248,13 @@
         }
 
         .skill-category {
-            background: rgba(30, 41, 59, 0.7);
+            background: rgba(20, 12, 32, 0.75);
             padding: 2rem;
             border-radius: 1rem;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
             border-left: 4px solid var(--jungle-green);
             transition: transform 0.3s;
+            backdrop-filter: blur(6px);
         }
 
         .skill-category:hover {
@@ -238,6 +268,10 @@
             display: flex;
             align-items: center;
             gap: 10px;
+        }
+
+        .skill-category h3 i {
+            color: var(--gold);
         }
 
         .skill-list {
@@ -268,25 +302,49 @@
         }
 
         .project-card {
-            background: rgba(30, 41, 59, 0.7);
+            background: rgba(20, 12, 32, 0.75);
             border-radius: 1rem;
             overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
             transition: transform 0.3s, box-shadow 0.3s;
             border: 1px solid rgba(255, 215, 0, 0.2);
+            backdrop-filter: blur(6px);
         }
 
         .project-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
             border-color: var(--gold);
         }
 
+        /* Golden icon placeholder for project image */
         .project-img {
             width: 100%;
             height: 200px;
-            object-fit: cover;
             border-bottom: 3px solid var(--jungle-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(255,215,0,0.08), rgba(138,43,226,0.18), rgba(41,171,135,0.08));
+        }
+
+        .project-img::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" opacity="0.06"><polygon fill="%23ffd700" points="0,200 200,0 400,200"/></svg>');
+            background-size: cover;
+        }
+
+        .project-img i {
+            font-size: 4rem;
+            background: linear-gradient(135deg, var(--gold), var(--jungle-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 4px 12px rgba(255,215,0,0.35));
+            z-index: 1;
         }
 
         .project-info {
@@ -371,12 +429,13 @@
 
         .timeline-content {
             flex: 1;
-            background: rgba(30, 41, 59, 0.7);
+            background: rgba(20, 12, 32, 0.75);
             padding: 1.5rem;
             border-radius: 1rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
             border-left: 3px solid var(--jungle-green);
             position: relative;
+            backdrop-filter: blur(6px);
         }
 
         .timeline-item:nth-child(odd) .timeline-content {
@@ -393,7 +452,7 @@
             height: 20px;
             background: var(--gold);
             border-radius: 50%;
-            border: 3px solid var(--dark-purple);
+            border: 3px solid #0a0612;
         }
 
         .timeline-item:nth-child(odd) .timeline-content::before {
@@ -432,11 +491,12 @@
             display: flex;
             align-items: center;
             gap: 1rem;
-            background: rgba(30, 41, 59, 0.7);
+            background: rgba(20, 12, 32, 0.75);
             padding: 1.5rem;
             border-radius: 1rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
             transition: transform 0.3s;
+            backdrop-filter: blur(6px);
         }
 
         .contact-item:hover {
@@ -456,10 +516,11 @@
         }
 
         .contact-form {
-            background: rgba(30, 41, 59, 0.7);
+            background: rgba(20, 12, 32, 0.75);
             padding: 2rem;
             border-radius: 1rem;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            backdrop-filter: blur(6px);
         }
 
         .form-group {
@@ -476,7 +537,7 @@
         .form-control {
             width: 100%;
             padding: 0.75rem;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.08);
             border: 1px solid rgba(255,255,255,0.2);
             border-radius: 0.5rem;
             font-size: 1rem;
@@ -496,7 +557,7 @@
 
         /* Footer */
         footer {
-            background-color: rgba(30, 41, 59, 0.9);
+            background-color: rgba(10, 6, 18, 0.92);
             color: white;
             padding: 3rem 0;
             text-align: center;
@@ -596,13 +657,13 @@
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
-                <div>
-                    <img src="https://via.placeholder.com/400" alt="Timothy Ngugi" class="profile-img">
+                <div class="profile-icon-wrap">
+                    <i class="fas fa-user-astronaut"></i>
                 </div>
                 <div class="about-text">
-                    <h3>Software Engineer & Technology Enthusiast</h3>
-                    <p>I'm a software engineer with expertise in full-stack web development, data science, and creating technology solutions that solve real-world problems.</p>
-                    <p>Currently working at CloudFactory while building educational platforms to help kids learn the latest technologies. I'm passionate about leveraging technology to improve systems in finance, economics, and education.</p>
+                    <h3>Software Engineer & AI Engineer</h3>
+                    <p>I'm a software engineer and AI engineer with expertise in full-stack web development, AI integration, data science, and creating technology solutions that solve real-world problems.</p>
+                    <p>Currently working at CloudFactory while building educational platforms, AI-powered tools, and collaborative products. I'm passionate about leveraging technology to improve systems in finance, economics, and education.</p>
                     <p>My background in both software engineering and finance gives me a unique perspective on building practical, user-focused applications.</p>
                 </div>
             </div>
@@ -626,13 +687,14 @@
                     </ul>
                 </div>
                 <div class="skill-category">
-                    <h3><i class="fas fa-chart-line"></i> Data Science & Analytics</h3>
+                    <h3><i class="fas fa-brain"></i> AI & Data Science</h3>
                     <ul class="skill-list">
+                        <li><i class="fas fa-check"></i> AI & LLM Integration</li>
+                        <li><i class="fas fa-check"></i> Streamlit & AI Dashboards</li>
                         <li><i class="fas fa-check"></i> Data Preparation & Annotation</li>
                         <li><i class="fas fa-check"></i> Machine Learning Fundamentals</li>
                         <li><i class="fas fa-check"></i> Data Visualization</li>
                         <li><i class="fas fa-check"></i> Statistical Analysis</li>
-                        <li><i class="fas fa-check"></i> Precision Medicine Applications</li>
                     </ul>
                 </div>
                 <div class="skill-category">
@@ -654,19 +716,20 @@
         <div class="container">
             <h2 class="section-title">Projects</h2>
             <div class="projects-grid">
+                <!-- Existing projects -->
                 <div class="project-card">
-                    <img src="https://via.placeholder.com/350x200" alt="Temi - Collaborative Social Site" class="project-img">
+                    <div class="project-img"><i class="fas fa-users"></i></div>
                     <div class="project-info">
                         <h3 class="project-title">Temi - Collaborative Social Platform</h3>
                         <p class="project-description">A full-featured collaborative social networking platform built with Next.js and Material Dashboard, featuring user profiles, real-time collaboration, and content sharing capabilities.</p>
                         <div class="project-links">
                             <a href="https://github.com/timothyngugi26/Temi" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                            <a href="https://demos.creative-tim.com/nextjs-material-dashboard/admin/dashboard" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://temi-platform.vercel.app/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                         </div>
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="https://via.placeholder.com/350x200" alt="Apache Superset" class="project-img">
+                    <div class="project-img"><i class="fas fa-chart-pie"></i></div>
                     <div class="project-info">
                         <h3 class="project-title">Data Visualization & Business Analytics</h3>
                         <p class="project-description">Enterprise-ready business intelligence and data visualization platform using Apache Superset. Features interactive dashboards, SQL IDE, and extensive visualization options for comprehensive data analysis.</p>
@@ -677,7 +740,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="https://via.placeholder.com/350x200" alt="Apache Fineract" class="project-img">
+                    <div class="project-img"><i class="fas fa-building-columns"></i></div>
                     <div class="project-info">
                         <h3 class="project-title">FinTech Solutions - Apache Fineract</h3>
                         <p class="project-description">A comprehensive financial inclusion platform for microfinance companies and banks. Features core banking functionality, loan management, savings accounts, and reporting systems for financial institutions.</p>
@@ -688,7 +751,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="https://via.placeholder.com/350x200" alt="Homehub" class="project-img">
+                    <div class="project-img"><i class="fas fa-house-laptop"></i></div>
                     <div class="project-info">
                         <h3 class="project-title">Homehub</h3>
                         <p class="project-description">A platform to train kids on the latest technologies like AI and web development with kid-friendly interfaces.</p>
@@ -699,7 +762,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="https://via.placeholder.com/350x200" alt="FoodBooks" class="project-img">
+                    <div class="project-img"><i class="fas fa-utensils"></i></div>
                     <div class="project-info">
                         <h3 class="project-title">FoodBooks</h3>
                         <p class="project-description">Hotel and restaurant management system with inventory, ordering, and reporting capabilities.</p>
@@ -710,13 +773,70 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="https://via.placeholder.com/350x200" alt="Mafuku" class="project-img">
+                    <div class="project-img"><i class="fas fa-book-open"></i></div>
                     <div class="project-info">
                         <h3 class="project-title">Mafuku</h3>
                         <p class="project-description">Social platform for book reading clubs and book selling with community features.</p>
                         <div class="project-links">
                             <a href="https://github.com/timothyngugi26/mafuku" target="_blank"><i class="fab fa-github"></i> GitHub</a>
                             <a href="https://mafuku.vercel.app/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW PROJECTS ADDED -->
+                <div class="project-card">
+                    <div class="project-img"><i class="fas fa-chart-line"></i></div>
+                    <div class="project-info">
+                        <h3 class="project-title">DukaanAnalyst</h3>
+                        <p class="project-description">AI-powered retail analytics app built with Streamlit — turns store data into insights, trend detection, and revenue forecasting.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/timothyngugi26/akauntant" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://dukaanalyst.streamlit.app/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img"><i class="fas fa-trophy"></i></div>
+                    <div class="project-info">
+                        <h3 class="project-title">TopOne</h3>
+                        <p class="project-description">AI integration platform for predictive ranking, smart recommendations, and real-time decision-making powered by an intelligent scoring engine.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/timothyngugi26/topone" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://machandaisa.streamlit.app/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img"><i class="fas fa-calculator"></i></div>
+                    <div class="project-info">
+                        <h3 class="project-title">Akauntant</h3>
+                        <p class="project-description">AI-powered accounting assistant — automated bookkeeping, smart transaction categorization, and financial reporting for businesses.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/timothyngugi26/akauntant" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://dukaanalyst.streamlit.app/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img"><i class="fas fa-cart-shopping"></i></div>
+                    <div class="project-info">
+                        <h3 class="project-title">Order & Pick</h3>
+                        <p class="project-description">A reimagined e-commerce shopping experience for household commodities — live command center, real-time order sync, and instant checkout.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/timothyngugi26" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://order-pick.vercel.app/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img"><i class="fas fa-users-viewfinder"></i></div>
+                    <div class="project-info">
+                        <h3 class="project-title">Temi - Talent & Scouts Platform</h3>
+                        <p class="project-description">A collaborative platform where students build real projects, earn verified recognition, and get discovered by vetted organizations and scouts.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/timothyngugi26/Temi" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://temi-platform.vercel.app/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                         </div>
                     </div>
                 </div>
@@ -817,7 +937,7 @@
         <div class="container">
             <p>&copy; 2025 Timothy Ngugi. All rights reserved.</p>
             <div class="social-links">
-                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/timothyngugi26" class="social-link"><i class="fab fa-github"></i></a>
                 <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
                 <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
             </div>
@@ -827,7 +947,7 @@
     <script>
         // Typing animation
         const typingText = document.getElementById('typing-text');
-        const text = "Software Engineer specializing in web development, data science, and creating impactful technology solutions";
+        const text = "Software Engineer & AI Engineer specializing in web development, AI integration, and creating impactful technology solutions";
         let index = 0;
         let isDeleting = false;
         let speed = 100;
@@ -835,7 +955,7 @@
         function type() {
             const currentText = text.substring(0, index);
             typingText.textContent = currentText;
-            
+
             if (!isDeleting && index < text.length) {
                 index++;
                 setTimeout(type, speed);
@@ -882,9 +1002,9 @@
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.backgroundColor = 'rgba(30, 41, 59, 0.95)';
+                header.style.backgroundColor = 'rgba(10, 6, 18, 0.98)';
             } else {
-                header.style.backgroundColor = 'rgba(30, 41, 59, 0.8)';
+                header.style.backgroundColor = 'rgba(10, 6, 18, 0.85)';
             }
         });
     </script>
